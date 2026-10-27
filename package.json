@@ -1,0 +1,12 @@
+{
+  "name": "agent-dash",
+  "version": "0.1.0",
+  "description": "Live dashboard for your LLM agents: what each one is assigned to and its status.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "demo": "node examples/simulate.js"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

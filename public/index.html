@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent Dash</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>Agent Dash</h1>
+      <span id="conn" class="conn" title="Live connection">connecting…</span>
+    </div>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search agents or tasks…" />
+    </div>
+  </header>
+
+  <section id="summary" class="summary"></section>
+
+  <main>
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty" hidden>
+      <h2>No agents yet</h2>
+      <p>Have an agent check in:</p>
+      <pre>curl -X POST localhost:4000/api/agents/my-agent/heartbeat \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"My Agent","status":"working","task":"Triage open issues"}'</pre>
+      <p>Or run the demo: <code>npm run demo</code></p>
+    </div>
+  </main>
+
+  <aside id="drawer" class="drawer" hidden>
+    <button id="close" class="close" aria-label="Close">×</button>
+    <div id="detail"></div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
